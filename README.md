@@ -17,13 +17,14 @@ Statische website (HTML/CSS/JS) voor GitHub Pages. Geen server, database of buil
 ## Online zetten met GitHub Pages
 
 1. Maak op GitHub een nieuwe repository aan, bijvoorbeeld `northguard-website` (openbaar).
-2. Upload de **inhoud** van deze map (niet de zip zelf) naar de hoofdmap van de repository:
-   *Add file → Upload files*, sleep alle bestanden en mappen erin en kies *Commit changes*.
+2. Upload alle bestanden van deze map (niet de zip zelf) naar de hoofdmap van de repository:
+   *Add file → Upload files*, selecteer alle bestanden en kies *Commit changes*.
+   Deze versie heeft bewust geen submappen, zodat uploaden via de website altijd werkt.
 3. Ga naar *Settings → Pages*:
    - *Source*: **Deploy from a branch**
    - *Branch*: **main**, map **/ (root)** → *Save*
 4. Vul onder *Custom domain* in: `www.northguardbv.nl` en klik *Save*.
-   (Het bestand `CNAME` staat al in de repository.)
+   (GitHub maakt dan zelf het bestand `CNAME` aan.)
 5. Zodra de DNS goed staat (zie hieronder) en het certificaat is aangemaakt: vink **Enforce HTTPS** aan.
 
 ## DNS-instellingen bij uw domeinregistrar
@@ -46,15 +47,9 @@ Vervang `GEBRUIKERSNAAM` door de GitHub-gebruikers- of organisatienaam.
 
 ## Teksten aanpassen
 
-Alle pagina's worden gemaakt met `build/gen.py`, zodat kop, menu en voettekst overal gelijk blijven.
+Teksten pas je direct aan in de `.html`-bestanden (op GitHub: open het bestand en klik op het potloodje). Kop, menu en voettekst staan op elke pagina; pas die bij een wijziging op alle pagina's aan.
 
-```bash
-python3 build/gen.py
-```
-
-Pas de teksten aan in `build/gen.py`, voer het script uit en upload de gewijzigde `.html`-bestanden. Kleine wijzigingen kunnen ook direct in de `.html`-bestanden, maar worden dan overschreven als het script opnieuw wordt uitgevoerd.
-
-Kleuren en vormgeving staan in `assets/css/style.css` (bovenaan, onder `:root`). Elk bedrijf heeft een eigen accentkleur:
+Kleuren en vormgeving staan in `style.css` (bovenaan, onder `:root`). Elk bedrijf heeft een eigen accentkleur:
 Services goud, Inspection groen, Materieel oranje, Mobility blauw.
 
 ## Foto's
@@ -62,15 +57,15 @@ Services goud, Inspection groen, Materieel oranje, Mobility blauw.
 De foto's komen van [Unsplash](https://unsplash.com) (gratis te gebruiken, ook commercieel, volgens de Unsplash-licentie) en worden rechtstreeks van Unsplash geladen. Laadt een foto niet, dan toont de pagina een donker vlak in de huisstijl.
 
 Eigen foto's gebruiken (aanbevolen zodra beschikbaar):
-1. Zet de foto in `assets/img/` (liefst `.jpg`, ca. 1600–2000 px breed, < 400 kB).
-2. Vervang in `build/gen.py` de betreffende `img(...)`-aanroep, of vervang in de HTML de `src` door `assets/img/naam.jpg`.
+1. Upload de foto naar de hoofdmap van de repository (liefst `.jpg`, ca. 1600–2000 px breed, < 400 kB).
+2. Vervang in de HTML de `src` van de foto door de bestandsnaam, bijvoorbeeld `naam.jpg`.
 
 Gebruik geen foto's van internet zonder toestemming van de maker.
 
 ## Contactformulier
 
-GitHub Pages heeft geen server. Het formulier stelt daarom een e-mail op aan `info@northguardbv.nl` in het e-mailprogramma van de bezoeker. Wilt u dat aanvragen direct binnenkomen zonder e-mailprogramma, koppel dan later een formulierdienst (bijv. Formspree) en pas `assets/js/main.js` aan.
+GitHub Pages heeft geen server. Het formulier stelt daarom een e-mail op aan `info@northguardbv.nl` in het e-mailprogramma van de bezoeker. Wilt u dat aanvragen direct binnenkomen zonder e-mailprogramma, koppel dan later een formulierdienst (bijv. Formspree) en pas `main.js` aan.
 
 ## Privacy
 
-Lettertypen staan op de eigen website (geen Google Fonts). Er worden geen trackingcookies gebruikt. Bij het laden van foto's van Unsplash ontvangt Unsplash het IP-adres van de bezoeker; dit staat in de privacyverklaring. Met eigen foto's in `assets/img/` vervalt dit.
+Lettertypen staan op de eigen website (geen Google Fonts). Er worden geen trackingcookies gebruikt. Bij het laden van foto's van Unsplash ontvangt Unsplash het IP-adres van de bezoeker; dit staat in de privacyverklaring. Met eigen foto's in de repository vervalt dit.

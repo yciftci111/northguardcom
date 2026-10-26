@@ -2,13 +2,13 @@
    Layout: dark sticky header, full-bleed photo heroes with a "typeplaat" (nameplate) strip,
    alternating paper/white bands, one dark CTA band per page. Each division sets --acc. */
 
-@font-face { font-family: "Barlow Condensed"; font-weight: 500; font-display: swap; src: url("../fonts/barlow-condensed-latin-500-normal.woff2") format("woff2"); }
-@font-face { font-family: "Barlow Condensed"; font-weight: 600; font-display: swap; src: url("../fonts/barlow-condensed-latin-600-normal.woff2") format("woff2"); }
-@font-face { font-family: "Barlow Condensed"; font-weight: 700; font-display: swap; src: url("../fonts/barlow-condensed-latin-700-normal.woff2") format("woff2"); }
-@font-face { font-family: "Source Sans 3"; font-weight: 400; font-display: swap; src: url("../fonts/source-sans-3-latin-400-normal.woff2") format("woff2"); }
-@font-face { font-family: "Source Sans 3"; font-weight: 600; font-display: swap; src: url("../fonts/source-sans-3-latin-600-normal.woff2") format("woff2"); }
-@font-face { font-family: "Source Sans 3"; font-weight: 700; font-display: swap; src: url("../fonts/source-sans-3-latin-700-normal.woff2") format("woff2"); }
-@font-face { font-family: "JetBrains Mono"; font-weight: 500; font-display: swap; src: url("../fonts/jetbrains-mono-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-weight: 500; font-display: swap; src: url("barlow-condensed-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-weight: 600; font-display: swap; src: url("barlow-condensed-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-weight: 700; font-display: swap; src: url("barlow-condensed-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-weight: 400; font-display: swap; src: url("source-sans-3-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-weight: 600; font-display: swap; src: url("source-sans-3-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-weight: 700; font-display: swap; src: url("source-sans-3-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-weight: 500; font-display: swap; src: url("jetbrains-mono-latin-500-normal.woff2") format("woff2"); }
 
 :root {
   --ink: #141B1F;        /* header, dark bands */
